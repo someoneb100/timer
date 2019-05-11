@@ -8,9 +8,7 @@ from time import process_time as pt
 
 def timer(pre = None, func = None, post = None, n = 1):
     suma, t = 0.0, 0
-    def empty_f():
-        pass
-    a = lambda x: empty_f if x is None else x
+    a = lambda x: (lambda: _) if x is None else x
     pre, func, post = a(pre), a(func), a(post)
     for _ in range(n):
         pre()
